@@ -35,11 +35,11 @@ def on_message(client, userdata, msg):
         command = msg.payload.decode().strip()
         print("\n=== New Command Received ===")
         print(f"MQTT Command: {command}")
-        
+
         if command in ["ON", "OFF"]:
             print(f"Forwarding to Arduino: {command}")
             ser.write(f"{command}\n".encode())
-            
+
             # Read and print Arduino's response
             print("\nArduino Response:")
             time.sleep(0.1)  # Give Arduino time to respond
@@ -48,7 +48,7 @@ def on_message(client, userdata, msg):
                 print(f"  {response}")
         else:
             print(f"✗ Invalid command received: {command}")
-            
+
     except Exception as e:
         print(f"✗ Error processing message: {str(e)}")
 
