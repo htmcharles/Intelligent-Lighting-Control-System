@@ -45,6 +45,7 @@ document.getElementById('schedulerForm').addEventListener('submit', async (e) =>
     const statusDiv = document.getElementById('status');
     const submitButton = document.querySelector('.btn-save');
 
+    
     // Disable button and show loading state with glow effect
     submitButton.disabled = true;
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
